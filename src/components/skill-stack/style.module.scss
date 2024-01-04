@@ -1,0 +1,65 @@
+@keyframes rotation {
+  from {
+    transform: rotateX(-10deg) rotateY(0deg);
+  }
+  to {
+    transform: rotateX(-10deg) rotateY(360deg);
+  }
+}
+
+.wrapper {
+  --card-height: 140px;
+  --card-width: 105px;
+  height: 1000px;
+  position: relative;
+  .animation {
+    width: 100%;
+    height: calc(100vh - var(--header-height));
+    position: sticky;
+    top: var(--header-height);
+    left: 0;
+    .skills {
+      perspective: 1000px;
+      width: fit-content;
+      .stack {
+        --radius: 280px;
+        position: relative;
+        width: calc(var(--radius) * 2);
+        height: calc(var(--card-height) * 2);
+        transform-style: preserve-3d;
+        animation: rotation 15s linear infinite;
+        &:hover {
+          animation-play-state: paused;
+        }
+        .card {
+          transform: rotateY(calc(var(--rotateY, 0) * 1deg)) translateZ(var(--radius));
+          position: absolute;
+          width: var(--card-width);
+          height: var(--card-height);
+          top: 50%;
+          left: 50%;
+          margin-top: calc(0px - var(--card-height) / 2);
+          margin-left: calc(0px - var(--card-width) / 2);
+          border-radius: 8px;
+          box-shadow: 0 0 8px #fff;
+          color: var(--primary-color);
+          background: #ffffff;
+          display: flex;
+          flex-direction: column;
+          align-items: center;
+          justify-content: center;
+          gap: 10px;
+          img {
+            width: 80px;
+            height: 80px;
+            object-fit: contain;
+          }
+          .text {
+            font-size: 14px;
+            text-align: center;
+          }
+        }
+      }
+    }
+  }
+}

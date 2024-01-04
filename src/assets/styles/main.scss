@@ -1,0 +1,120 @@
+:root {
+  --primary-bg-color: #343541;
+  --seconday-bg-color: #111827;
+  --primary-color: #13c2c2;
+  --header-height: 80px;
+  --primary-padding: 20px;
+  --page-width: 1200px;
+}
+
+// ==========================
+// font start
+// ==========================
+@font-face {
+  font-family: 'Rajdhani';
+  src: url('@/assets/fonts/Rajdhani/Rajdhani-Bold.ttf') format('truetype');
+  font-weight: bold;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'Rajdhani';
+  src: url('@/assets/fonts/Rajdhani/Rajdhani-Light.ttf') format('truetype');
+  font-weight: 300; /* Light */
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'Rajdhani';
+  src: url('@/assets/fonts/Rajdhani/Rajdhani-Medium.ttf') format('truetype');
+  font-weight: 500; /* Medium */
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'Rajdhani';
+  src: url('@/assets/fonts/Rajdhani/Rajdhani-Regular.ttf') format('truetype');
+  font-weight: normal;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'Rajdhani';
+  src: url('@/assets/fonts/Rajdhani/Rajdhani-SemiBold.ttf') format('truetype');
+  font-weight: 600; /* SemiBold */
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'Noto Sans JP';
+  src: url('@/assets/fonts/Noto_Sans_JP/static/NotoSansJP-Black.ttf') format('truetype');
+  font-weight: 900; /* Black */
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'Noto Sans JP';
+  src: url('@/assets/fonts/Noto_Sans_JP/static/NotoSansJP-Bold.ttf') format('truetype');
+  font-weight: bold;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'Noto Sans JP';
+  src: url('@/assets/fonts/Noto_Sans_JP/static/NotoSansJP-ExtraBold.ttf') format('truetype');
+  font-weight: 800; /* ExtraBold */
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'Noto Sans JP';
+  src: url('@/assets/fonts/Noto_Sans_JP/static/NotoSansJP-ExtraLight.ttf') format('truetype');
+  font-weight: 200; /* ExtraLight */
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'Noto Sans JP';
+  src: url('@/assets/fonts/Noto_Sans_JP/static/NotoSansJP-Light.ttf') format('truetype');
+  font-weight: 300; /* Light */
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'Noto Sans JP';
+  src: url('@/assets/fonts/Noto_Sans_JP/static/NotoSansJP-Medium.ttf') format('truetype');
+  font-weight: 500; /* Medium */
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'Noto Sans JP';
+  src: url('@/assets/fonts/Noto_Sans_JP/static/NotoSansJP-Regular.ttf') format('truetype');
+  font-weight: normal;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'Noto Sans JP';
+  src: url('@/assets/fonts/Noto_Sans_JP/static/NotoSansJP-SemiBold.ttf') format('truetype');
+  font-weight: 600; /* SemiBold */
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'Noto Sans JP';
+  src: url('@/assets/fonts/Noto_Sans_JP/static/NotoSansJP-Thin.ttf') format('truetype');
+  font-weight: 100; /* Thin */
+  font-style: normal;
+}
+
+// ==========================
+// font end
+// ==========================
+
+body {
+  background-color: var(--primary-bg-color);
+  color: #ffffff;
+  font-family: 'Rajdhani', 'Noto Sans JP', sans-serif;
+  padding-top: var(--header-height);
+}

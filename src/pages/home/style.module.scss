@@ -1,0 +1,17 @@
+.wrapper {
+  width: var(--page-width);
+  margin: 0 auto;
+  padding: var(--primary-padding);
+  box-sizing: border-box;
+  .title {
+    font-size: 20px;
+    height: 30px;
+    line-height: 30px;
+    border-left: 4px solid var(--primary-color);
+    padding-left: 10px;
+    margin-bottom: var(--primary-padding);
+    &.mt {
+      margin-top: 60px;
+    }
+  }
+}

@@ -1,0 +1,61 @@
+.wrapper {
+  position: fixed;
+  z-index: 1;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: var(--header-height);
+  background-color: var(--seconday-bg-color);
+  .header {
+    width: var(--page-width);
+    height: inherit;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0px var(--primary-padding);
+    margin: 0 auto;
+    box-sizing: border-box;
+    .title {
+      h1 {
+        font-size: 30px;
+        letter-spacing: 6px;
+      }
+      h2 {
+        font-size: 16px;
+        font-weight: 300;
+      }
+    }
+    nav {
+      --border-radius: 20px;
+      --item-width: 140px;
+      position: relative;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      height: 40px;
+      border-radius: var(--border-radius);
+      font-size: 16px;
+      span {
+        display: block;
+        width: var(--item-width);
+        text-align: center;
+        z-index: 3;
+        cursor: pointer;
+      }
+      .slider {
+        position: absolute;
+        z-index: 2;
+        left: calc(var(--active, 0) * var(--item-width));
+        top: 0px;
+        width: var(--item-width);
+        height: inherit;
+        border-radius: var(--border-radius);
+        background-color: var(--primary-color);
+        transition-property: left;
+        transition-duration: 300ms;
+        transition-timing-function: linear(0, 1.1 60%, 0.9 75%, 1.003 90%, 1);
+        box-shadow: 0px 0px 10px 0px var(--primary-color);
+      }
+    }
+  }
+}
