@@ -7,30 +7,87 @@
   }
 }
 
+@keyframes skillAnimation {
+  0%,
+  10% {
+    transform: scale(1);
+  }
+  40%,
+  100% {
+    transform: scale(0.7);
+  }
+}
+
+@keyframes imageAnimation {
+  0%,
+  10% {
+    width: 0px;
+    height: 0px;
+    opacity: 0;
+  }
+  40% {
+    height: 200px;
+    width: 200px;
+    opacity: 0;
+    margin-left: 0px;
+  }
+  50%,
+  100% {
+    height: 200px;
+    width: 200px;
+    opacity: 1;
+    margin-left: 100px;
+  }
+}
+
 .wrapper {
-  --card-height: 140px;
-  --card-width: 105px;
-  height: 1000px;
+  height: 1800px;
   position: relative;
   .animation {
-    width: 100%;
     height: calc(100vh - var(--header-height));
     position: sticky;
     top: var(--header-height);
     left: 0;
+    right: 0;
+    .row {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      height: fit-content;
+    }
+    .img {
+      background-color: red;
+      margin-top: 30px;
+      animation: imageAnimation 1s linear var(--delay, 0s) paused both;
+      // animation-name: imageAnimation;
+      // animation-duration: 1s;
+      // animation-timing-function: linear;
+      // animation-delay: var(--delay, 0s);
+      // animation-play-state: paused;
+      // animation-fill-mode: forwards;
+    }
     .skills {
+      --card-height: 140px;
+      --card-width: 105px;
+      --radius: 320px;
       perspective: 1000px;
-      width: fit-content;
+      position: relative;
+      width: 700px;
+      margin: 0 auto;
+      animation: skillAnimation 1s linear var(--delay, 0s) paused both;
+      .img {
+        width: 200px;
+        height: 200px;
+        background-color: red;
+        position: absolute;
+        top: 0;
+        left: 0;
+      }
       .stack {
-        --radius: 280px;
         position: relative;
-        width: calc(var(--radius) * 2);
         height: calc(var(--card-height) * 2);
         transform-style: preserve-3d;
-        animation: rotation 15s linear infinite;
-        &:hover {
-          animation-play-state: paused;
-        }
+        animation: rotation 20s linear infinite;
         .card {
           transform: rotateY(calc(var(--rotateY, 0) * 1deg)) translateZ(var(--radius));
           position: absolute;

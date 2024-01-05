@@ -17,10 +17,6 @@ export const skillData: Skill[] = [
     text: 'TypeScript',
   },
   {
-    img: `${import.meta.env.BASE_URL}images/typescript.png`,
-    text: 'TypeScript',
-  },
-  {
     img: `${import.meta.env.BASE_URL}images/javascript.png`,
     text: 'JavaScript',
   },
