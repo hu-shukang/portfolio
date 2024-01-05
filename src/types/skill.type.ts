@@ -5,63 +5,63 @@ export type Skill = {
 
 export const skillData: Skill[] = [
   {
-    img: '/portfolio/images/vue.png',
+    img: `${import.meta.env.BASE_URL}images/vue.png`,
     text: 'Vue3',
   },
   {
-    img: '/portfolio/images/react.png',
+    img: `${import.meta.env.BASE_URL}images/react.png`,
     text: 'React',
   },
   {
-    img: '/portfolio/images/typescript.png',
+    img: `${import.meta.env.BASE_URL}images/typescript.png`,
     text: 'TypeScript',
   },
   {
-    img: '/portfolio/images/typescript.png',
+    img: `${import.meta.env.BASE_URL}images/typescript.png`,
     text: 'TypeScript',
   },
   {
-    img: '/portfolio/images/javascript.png',
+    img: `${import.meta.env.BASE_URL}images/javascript.png`,
     text: 'JavaScript',
   },
   {
-    img: '/portfolio/images/css.png',
+    img: `${import.meta.env.BASE_URL}images/css.png`,
     text: 'CSS',
   },
   {
-    img: '/portfolio/images/html.png',
+    img: `${import.meta.env.BASE_URL}images/html.png`,
     text: 'HTML',
   },
   {
-    img: '/portfolio/images/java.png',
+    img: `${import.meta.env.BASE_URL}images/java.png`,
     text: 'Java',
   },
   {
-    img: '/portfolio/images/aws-s3.png',
+    img: `${import.meta.env.BASE_URL}images/aws-s3.png`,
     text: 'S3',
   },
   {
-    img: '/portfolio/images/aws-dynamodb.png',
+    img: `${import.meta.env.BASE_URL}images/aws-dynamodb.png`,
     text: 'DynamoDB',
   },
   {
-    img: '/portfolio/images/rdb.png',
+    img: `${import.meta.env.BASE_URL}images/rdb.png`,
     text: 'RDB',
   },
   {
-    img: '/portfolio/images/aws-lambda.png',
+    img: `${import.meta.env.BASE_URL}images/aws-lambda.png`,
     text: 'Lambda',
   },
   {
-    img: '/portfolio/images/aws-fargate.png',
+    img: `${import.meta.env.BASE_URL}images/aws-fargate.png`,
     text: 'Fargate',
   },
   {
-    img: '/portfolio/images/springboot.png',
+    img: `${import.meta.env.BASE_URL}images/springboot.png`,
     text: 'SpringBoot',
   },
   {
-    img: '/portfolio/images/fastify.png',
+    img: `${import.meta.env.BASE_URL}images/fastify.png`,
     text: 'fastify',
   },
 ];
