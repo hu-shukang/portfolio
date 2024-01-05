@@ -52,7 +52,7 @@ const SkillStack = () => {
     <div ref={wrapperRef} className={styles.wrapper}>
       <div ref={animationRef} className={styles.animation} style={{ '--delay': `${delay}s` }}>
         <div className={styles.row}>
-          <div className={styles.img}></div>
+          <img className={styles.knowledge} src={`${import.meta.env.BASE_URL}images/knowledge.png`} alt="knowledge" />
           <div className={styles.skills}>
             <div className={styles.stack}>
               {skillList.map(skill => (
