@@ -1,0 +1,28 @@
+.card {
+  transform: rotateY(calc(var(--ry) * 1deg)) translateZ(var(--radius));
+  position: absolute;
+  width: var(--card-width);
+  height: var(--card-height);
+  top: 50%;
+  left: 50%;
+  margin-top: calc(0px - var(--card-height) / 2);
+  margin-left: calc(0px - var(--card-width) / 2);
+  border-radius: 8px;
+  box-shadow: 0 0 8px #fff;
+  color: var(--primary-color);
+  background: #ffffff;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  img {
+    width: 80px;
+    height: 80px;
+    object-fit: contain;
+  }
+  .text {
+    font-size: 14px;
+    text-align: center;
+  }
+}

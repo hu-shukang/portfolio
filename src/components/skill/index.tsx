@@ -1,35 +1,19 @@
 import { useEffect, useMemo, useRef, useState } from 'react';
 import styles from './style.module.scss';
-import { skillData } from '@/types/skill.type';
 import useWindowSize from '@/hooks/window-size.hook';
+import { SkillCardProps, initSkillCardProps } from '@/types/skill.type';
+import SkillCard from '../skill-card';
 
-type SkillCardProps = {
-  index: number;
-  rotateY: number;
-  text: string;
-  img: string;
-};
-
-const SkillCard = ({ index, text, img, rotateY }: SkillCardProps) => {
-  return (
-    <div className={styles.card} style={{ '--rotateY': rotateY, '--index': index }}>
-      <img src={img} alt={text} />
-      <div className={styles.text}>{text}</div>
-    </div>
-  );
-};
-
-const SkillStack = () => {
+const Skill = () => {
   const { height } = useWindowSize();
   const [delay, setDelay] = useState(0);
   const wrapperRef = useRef<HTMLDivElement>(null!);
   const animationRef = useRef<HTMLDivElement>(null!);
+  const skillList = useRef<SkillCardProps[]>(initSkillCardProps());
+
   const maxDistance = useMemo(() => {
     return 1800 - height + 80;
   }, [height]);
-  const skillList = useMemo<SkillCardProps[]>(() => {
-    return skillData.map((skill, index, arr) => ({ ...skill, index: index, rotateY: (index / arr.length) * 360 }));
-  }, []);
 
   useEffect(() => {
     const scrollHandler = () => {
@@ -50,13 +34,17 @@ const SkillStack = () => {
   return (
     <div ref={wrapperRef} className={styles.wrapper}>
       <div ref={animationRef} className={styles.animation} style={{ '--delay': `${delay}s` }}>
-        <div className={styles.row}>
-          <img className={styles.knowledge} src={`${import.meta.env.BASE_URL}images/knowledge.png`} alt="knowledge" />
-          <div className={styles.skills}>
-            <div className={styles.stack}>
-              {skillList.map(skill => (
-                <SkillCard key={skill.index} {...skill} />
-              ))}
+        <div className={styles.perspective}>
+          <div className={styles.knowledge}>
+            <img src={`${import.meta.env.BASE_URL}images/knowledge.png`} alt="knowledge" />
+          </div>
+          <div className={styles.scale}>
+            <div className={styles.rotationX}>
+              <div className={`${styles.task} ${styles.rotationY}`}>
+                {skillList.current.map(skill => (
+                  <SkillCard key={skill.index} {...skill} />
+                ))}
+              </div>
             </div>
           </div>
         </div>
@@ -65,4 +53,4 @@ const SkillStack = () => {
   );
 };
 
-export default SkillStack;
+export default Skill;

@@ -3,6 +3,14 @@ export type Skill = {
   img: string;
 };
 
+export type SkillCardProps = {
+  index: number;
+  rotateY: number;
+  text: string;
+  img: string;
+  animation: string;
+};
+
 export const skillData: Skill[] = [
   {
     img: `${import.meta.env.BASE_URL}images/vue.png`,
@@ -61,3 +69,12 @@ export const skillData: Skill[] = [
     text: 'fastify',
   },
 ];
+
+export const initSkillCardProps = (): SkillCardProps[] => {
+  return skillData.map((skill, index, arr) => ({
+    ...skill,
+    index: index,
+    rotateY: (index / arr.length) * 360,
+    animation: '',
+  }));
+};
