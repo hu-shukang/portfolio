@@ -9,6 +9,7 @@ export type SkillCardProps = {
   text: string;
   img: string;
   animation: string;
+  class: string;
 };
 
 export const skillData: Skill[] = [
@@ -75,6 +76,7 @@ export const initSkillCardProps = (): SkillCardProps[] => {
     ...skill,
     index: index,
     rotateY: (index / arr.length) * 360,
+    class: '',
     animation: '',
   }));
 };

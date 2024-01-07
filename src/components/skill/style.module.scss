@@ -18,16 +18,14 @@
 
 @keyframes scaleAnimation {
   0%,
-  10% {
+  20% {
     transform: scale(1);
+    opacity: 1;
   }
-  40%,
-  60% {
-    transform: scale(0.7);
-  }
-  70%,
+  60%,
   100% {
-    transform: scale(1);
+    transform: scale(0);
+    opacity: 0;
   }
 }
 
@@ -37,41 +35,24 @@
   animation: scaleAnimation 1s linear var(--delay) both paused;
 }
 
-@keyframes imageAnimation {
+@keyframes gridAnimation {
   0%,
-  10% {
-    width: 0px;
-    align-self: stretch;
-    opacity: 0;
-  }
-  40%,
   60% {
-    align-self: stretch;
-    width: 300px;
-    opacity: 1;
-  }
-  70%,
-  100% {
-    align-self: stretch;
-    width: 0px;
     opacity: 0;
+    transform: translateX(-50%) translateY(-50%) scale(0);
   }
-}
-
-@keyframes light {
-  0% {
-    filter: drop-shadow(0px 0px 6px #ffffff);
-  }
-  50% {
-    filter: drop-shadow(0px 0px 15px #ffffff);
+  80% {
+    opacity: 1;
+    transform: translateX(-50%) translateY(-50%) scale(0.3);
   }
   100% {
-    filter: drop-shadow(0px 0px 6px #ffffff);
+    opacity: 1;
+    transform: translateX(-50%) translateY(-50%) scale(1);
   }
 }
 
 .wrapper {
-  height: 5500px;
+  height: 1800px;
   position: relative;
   .animation {
     --radius: 320px;
@@ -85,19 +66,30 @@
     .perspective {
       perspective: 1500px;
       display: flex;
-      .knowledge {
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        object-fit: contain;
-        animation:
-          imageAnimation 1s linear var(--delay) paused both,
-          light 2s linear 0s infinite;
-      }
+      justify-content: center;
+      position: relative;
       .task {
         height: 400px;
         position: relative;
         transform-style: preserve-3d;
+      }
+    }
+    .grid {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      height: 60vh;
+      width: 100%;
+      animation: gridAnimation 1s linear var(--delay) both paused;
+      display: grid;
+      grid-template-columns: repeat(7, 1fr);
+      place-items: center;
+      .grid-item {
+        position: relative;
+        top: unset;
+        left: unset;
+        margin-top: unset;
+        margin-left: unset;
       }
     }
   }
