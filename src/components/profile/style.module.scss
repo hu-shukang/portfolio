@@ -4,6 +4,7 @@
   gap: 100px;
   .profile {
     section {
+      min-width: 240px;
       & + section {
         margin-top: var(--primary-padding);
       }
@@ -16,5 +17,9 @@
         font-size: 18px;
       }
     }
+  }
+  .slogan {
+    flex-grow: 1;
+    text-align: center;
   }
 }

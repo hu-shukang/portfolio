@@ -23,6 +23,10 @@ const Profile = () => {
           <p>システムエンジニア</p>
         </section>
       </div>
+      <div className={styles.slogan}>
+        <img src={`${import.meta.env.BASE_URL}images/slogan_01.png`} alt="" />
+        <img src={`${import.meta.env.BASE_URL}images/slogan_02.png`} alt="" />
+      </div>
     </div>
   );
 };

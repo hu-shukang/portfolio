@@ -1,0 +1,8 @@
+.wrapper {
+  --height: 60px;
+  height: var(--height);
+  line-height: var(--height);
+  background-color: var(--seconday-bg-color);
+  font-size: 13px;
+  text-align: center;
+}

@@ -1,0 +1,6 @@
+.wrapper {
+  --height: 200px;
+  height: var(--height);
+  line-height: var(--height);
+  text-align: center;
+}

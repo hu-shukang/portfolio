@@ -1,11 +1,11 @@
-import { useCallback, useEffect, useMemo, useRef, useState } from 'react';
+import { useEffect, useMemo, useRef, useState } from 'react';
 import styles from './style.module.scss';
 import useWindowSize from '@/hooks/window-size.hook';
 import { SkillCardProps, initSkillCardProps } from '@/types/skill.type';
 import SkillCard from '../skill-card';
 
 const Skill = () => {
-  const { height, width } = useWindowSize();
+  const { height } = useWindowSize();
   const [delay, setDelay] = useState(0);
   const wrapperRef = useRef<HTMLDivElement>(null!);
   const animationRef = useRef<HTMLDivElement>(null!);
