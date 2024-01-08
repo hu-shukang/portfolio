@@ -35,16 +35,24 @@
   animation: scaleAnimation 1s linear var(--delay) both paused;
 }
 
+.cardScale {
+  transition: transform 0.5s ease-in-out;
+  &:hover {
+    transform: scale(1.2);
+  }
+}
+
 @keyframes gridAnimation {
   0%,
   60% {
     opacity: 0;
     transform: translateX(-50%) translateY(-50%) scale(0);
   }
-  80% {
+  75% {
     opacity: 1;
     transform: translateX(-50%) translateY(-50%) scale(0.3);
   }
+  90%,
   100% {
     opacity: 1;
     transform: translateX(-50%) translateY(-50%) scale(1);
@@ -84,7 +92,7 @@
       display: grid;
       grid-template-columns: repeat(7, 1fr);
       place-items: center;
-      .grid-item {
+      .gridItem {
         position: relative;
         top: unset;
         left: unset;

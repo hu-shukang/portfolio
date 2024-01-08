@@ -48,7 +48,12 @@ const Skill = () => {
         </div>
         <div ref={gridRef} className={styles.grid} style={{ '--radius': '0px' }}>
           {skillList.current.map(skill => (
-            <SkillCard key={skill.index} {...skill} rotateY={0} class={styles['grid-item']} />
+            <SkillCard
+              key={skill.index}
+              {...skill}
+              rotateY={0}
+              class={`${styles.gridItem} ${delay <= -0.9 ? styles.cardScale : ''}`}
+            />
           ))}
         </div>
       </div>
