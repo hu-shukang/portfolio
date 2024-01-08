@@ -26,35 +26,69 @@
       }
     }
     nav {
-      --border-radius: 20px;
-      --item-width: 140px;
+      --item-width: 110px;
+      --size: 40px;
       position: relative;
       display: flex;
       align-items: center;
       justify-content: center;
-      height: 40px;
+      height: var(--size);
+      line-height: var(--size);
       border-radius: var(--border-radius);
       font-size: 16px;
-      span {
-        display: block;
+      .button {
+        display: flex;
+        justify-content: center;
+        align-items: center;
         width: var(--item-width);
-        text-align: center;
-        z-index: 3;
+        position: relative;
         cursor: pointer;
-      }
-      .slider {
-        position: absolute;
-        z-index: 2;
-        left: calc(var(--active, 0) * var(--item-width));
-        top: 0px;
-        width: var(--item-width);
-        height: inherit;
-        border-radius: var(--border-radius);
-        background-color: var(--primary-color);
-        transition-property: left;
-        transition-duration: 300ms;
-        transition-timing-function: linear(0, 1.1 60%, 0.9 75%, 1.003 90%, 1);
-        box-shadow: 0px 0px 10px 0px var(--primary-color);
+        color: #ffffff;
+        text-decoration: none;
+        .preffix {
+          height: 35px;
+          width: 35px;
+          margin-right: 4px;
+        }
+        &::before {
+          content: '';
+          position: absolute;
+          top: 0;
+          left: 0;
+          height: 10px;
+          width: 10px;
+          border-top: 2px solid var(--primary-color);
+          border-left: 2px solid var(--primary-color);
+          transition: all 0.7s ease-in-out;
+          box-sizing: border-box;
+        }
+        &::after {
+          content: '';
+          position: absolute;
+          bottom: 0;
+          right: 0;
+          height: 10px;
+          width: 10px;
+          border-bottom: 2px solid var(--primary-color);
+          border-right: 2px solid var(--primary-color);
+          transition: all 0.7s ease-in-out;
+          box-sizing: border-box;
+        }
+        &:hover {
+          background-color: var(--primary-color);
+          box-shadow: 0 0 50px var(--primary-color);
+          transition:
+            background-color 0.4s ease-in-out 0.3s,
+            box-shadow 0.4s ease-in-out 0.3s;
+          &::before {
+            height: 100%;
+            width: 100%;
+          }
+          &::after {
+            height: 100%;
+            width: 100%;
+          }
+        }
       }
     }
   }
